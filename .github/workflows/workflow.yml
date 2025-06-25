@@ -15,6 +15,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-      - uses: ./.github/actions/composite-deps
+      - name: Llamada a custom
+        uses: ./.github/actions/composite-deps
         with: 
           working-dir: ./my-app
