@@ -18,4 +18,4 @@ jobs:
       - name: Llamada a custom
         uses: ./.github/actions/composite-deps
         with: 
-          working-dir: ${{env.WORK_DIR}}
+          working_dir: ${{env.WORK_DIR}}
