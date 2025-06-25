@@ -3,7 +3,7 @@ name: Custom Actions - Composite
 on: 
   workflow_dispatch:
 env:
-  WORK_DIR: ./my-app
+  WORK_DIR: my-app
   NODE_VERSION: 20.x
 
 jobs:

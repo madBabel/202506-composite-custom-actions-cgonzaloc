@@ -2,6 +2,7 @@ name: My custom action
 description: my custom action
 inputs: 
     working_dir:
+        description: "Working dir"
         default: '.'
 runs:
   using: composite
@@ -15,6 +16,8 @@ runs:
         working-directory: ${{inputs.working_dir}}       
         run: npm ci
         shell: bash
+        
       - name: Run Unit Tests
         run: npm run test
+        working-directory: ${{inputs.working_dir}} 
         shell: bash
