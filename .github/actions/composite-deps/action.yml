@@ -5,13 +5,14 @@ inputs:
         default: '.'
 runs:
   using: composite
-  working-directory: ${{inputs.working_dir}}
+  
   steps: 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{env.NODE_VERSION}}
-      - name: Install Dependencies        
+      - name: Install Dependencies 
+        working-directory: ${{inputs.working_dir}}       
         run: npm ci
         shell: bash
       - name: Run Unit Tests
