@@ -6,12 +6,15 @@ inputs:
 runs:
   using: composite
   steps: 
-        working-directory: ${{inputs.working_dir}}
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: ${{env.NODE_VERSION}}
       - name: Install Dependencies
+        working-directory: ${{inputs.working_dir}}
         run: npm ci
       - name: Run Unit Tests
         run: npm run test
